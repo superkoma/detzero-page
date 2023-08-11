@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Academic Project Page</title>
+  <title>DetZero</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -52,22 +52,55 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">DetZero: Rethinking Offboard 3D Object Detection with Long-term Sequential Point Clouds</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Tao Ma</a><sup>1,2</sup>,</span>
+              <span class="author-block">
+                Xuemeng Yang<sup>2</sup>,</span>
+              <span class="author-block">
+                Hongbin Zhou<sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Xin Li</a><sup>3,2</sup>,</span>
+              <span class="author-block">
+                <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Botian Shi</a><sup>2</sup>,</span>
+              <br>
+              <span class="author-block">
+                Junjie Liu<sup>4</sup>,</span>
+              <span class="author-block">
+                Yuchen Yang<sup>5,2</sup>,</span>
+              <span class="author-block">
+                Zhizheng Liu<sup>6</sup>,</span>
+              <br>
+              <span class="author-block">
+                Liang He<sup>3</sup>,</span>
+              <span class="author-block">
+                Yu Qiao<sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Yikang Li</a><sup>2 *</sup>,</span>
+              <span class="author-block">
+                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Hongsheng Li</a><sup>1 *</sup>
+              </span>
+              </div>
 
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
+                <!-- <br> -->
+                <div class="is-size-5 publication-authors">
+                  <span class="author-block" style="font-size:17px">
+                    <sup>1</sup> MMLab, CUHK
+                    &nbsp;&nbsp;<sup>2</sup> Shanghai AI Lab &nbsp;&nbsp;<sup>3</sup> East China Normal University
+                  </span>
+                  <br>
+                  <span class="author-block" style="font-size:17px">
+                    <sup>4</sup> South China University of Technology
+                    &nbsp;&nbsp;<sup>5</sup> Fudan University &nbsp;&nbsp;<sup>6</sup> ETH Zurich
+                  </span>
+                  <!-- <br> -->
+                  <!-- <span class="author-block">Conferance name and year</span> -->
+                  <span class="eql-cntrb"><small><br><sup>*</sup>Corresponding Authors</small></span>
+                  <br>
+                  <span class="author-block">ICCV 2023</span>
+                </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
@@ -89,7 +122,7 @@
                       <span class="icon">
                         <i class="fas fa-file-pdf"></i>
                       </span>
-                      <span>Supplementary</span>
+                      <span>Leaderboard</span>
                     </a>
                   </span>
 
@@ -129,7 +162,7 @@
     <div class="hero-body">
       <video poster="" id="tree" autoplay controls muted loop height="100%">
         <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
+        <source src="static/videos/detzero-res.mp4"
         type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
@@ -148,7 +181,13 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Existing offboard 3D detectors always follow a modular pipeline design to take advantage of unlimited sequential point clouds. We have found that the full potential of offboard 3D detectors is not explored mainly due to two reasons: (1) the onboard multi-object tracker cannot generate sufficient complete object trajectories, and (2) the motion state of objects poses an inevitable challenge for the object-centric refining stage in leveraging the long-term temporal context representation.
+          </p>
+          <p>
+            To tackle these problems, we propose a novel paradigm of offboard 3D object detection, named DetZero. Concretely, an offline tracker coupled with a multi-frame detector is proposed to focus on the completeness of generated object tracks. An attention-mechanism refining module is proposed to strengthen contextual information interaction across long-term sequential point clouds for object refining with decomposed regression methods.
+          </p>
+          <p>
+            Extensive experiments on Waymo Open Dataset show our DetZero outperforms all state-of-the-art onboard and offboard 3D detection methods. Notably, DetZero ranks 1st place on Waymo 3D object detection leaderboard with 85.15 mAPH (L2) detection performance. Further experiments validate the application of taking the place of human labels with such high-quality results. Our empirical study leads to rethinking conventions and interesting findings that can guide future research on offboard 3D object detection.
           </p>
         </div>
       </div>
@@ -165,28 +204,28 @@
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/detzero-framework.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
           First image description.
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/detzero-framework.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
           Second image description.
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/detzero-framework.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
          Third image description.
        </h2>
      </div>
      <div class="item">
       <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
+      <img src="static/images/detzero-framework.png" alt="MY ALT TEXT"/>
       <h2 class="subtitle has-text-centered">
         Fourth image description.
       </h2>
@@ -260,7 +299,7 @@
 
 
 <!-- Paper poster -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Poster</h2>
@@ -270,7 +309,7 @@
         
       </div>
     </div>
-  </section>
+  </section> -->
 <!--End paper poster -->
 
 
@@ -278,7 +317,14 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <pre><code>
+        @inproceedings{ma2023detzero,
+          title = {DetZero: Rethinking Offboard 3D Object Detection with Long-term Sequential Point Clouds},
+          author = {Tao Ma and Xuemeng Yang and Hongbin Zhou and Xin Li and Botian Shi and Junjie Liu and Yuchen Yang and Zhizheng Liu and Liang He and Yu Qiao and Yikang Li and Hongsheng Li},
+          booktitle = {Proceedings of International Conference on Computer Vision (ICCV)},
+          year = {2023}
+        }
+      </code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
@@ -289,13 +335,9 @@
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
-
           <p>
             This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
-            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
-
         </div>
       </div>
     </div>
